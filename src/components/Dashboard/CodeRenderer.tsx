@@ -22,7 +22,7 @@ export default function CodeRenderer({ jsxString }: { jsxString: string }) {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button size="sm">Get Code</Button>
+        <Button variant="secondary" size="sm">Get Code</Button>
       </DialogTrigger>
       <DialogContent className="min-w-[900px]">
         <DialogHeader>

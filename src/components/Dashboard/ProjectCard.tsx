@@ -27,7 +27,7 @@ export default function ProjectCard({
       </CardContent>
       <CardFooter className="justify-end gap-4">
         <Button asChild>
-          <Link to={`/dashboard/project/${id}`}>View</Link>
+          <Link to={`/dashboard/projects/${id}`}>View</Link>
         </Button>
         <Button variant="destructive">Delete</Button>
       </CardFooter>
