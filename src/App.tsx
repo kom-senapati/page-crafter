@@ -1,5 +1,8 @@
 import { Route, Switch } from "wouter";
+import ProtectedRoute from "@/routes/ProtectedRoute";
+import SignInPage from "@/pages/Auth/SignInPage";
 import LandingPage from "@/pages/LandingPage";
+import Dashboard from "@/pages/Dashboard";
 import Templates from "@/pages/Dashboard/Templates";
 import Template from "@/pages/Dashboard/Template";
 import NotFound from "@/pages/NotFound";
@@ -9,11 +12,13 @@ export default function Home() {
     <>
       <Switch>
         <Route path="/" component={LandingPage} />
-        <Route path="/dashboard/templates">{Templates}</Route>
-        <Route path="/dashboard/templates/:id">
-          {Template}
+        <Route path="/signin" component={SignInPage} />
+        <ProtectedRoute path="/dashboard" component={Dashboard} />
+        <ProtectedRoute path="/dashboard/templates" component={Templates} />
+        <ProtectedRoute path="/dashboard/templates/:id" component={Template} />
+        <Route>
+          <NotFound />
         </Route>
-        <Route><NotFound /></Route>
       </Switch>
     </>
   );
