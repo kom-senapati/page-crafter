@@ -24,7 +24,7 @@ export default function CodeRenderer({ jsxString }: { jsxString: string }) {
       <DialogTrigger>
         <Button variant="secondary" size="sm">Get Code</Button>
       </DialogTrigger>
-      <DialogContent className="min-w-[900px]">
+      <DialogContent className="max-w-[900px]">
         <DialogHeader>
           <DialogTitle>Code</DialogTitle>
         </DialogHeader>
@@ -34,7 +34,7 @@ export default function CodeRenderer({ jsxString }: { jsxString: string }) {
               <Button size="sm">Copy to Clipboard</Button>
             </CopyToClipboard>
           </div>
-          <SyntaxHighlighter language="jsx" style={dracula} className="w-full">
+          <SyntaxHighlighter language="jsx" style={dracula} className="w-[850px] h-[500px]">
             {code}
           </SyntaxHighlighter>
         </div>
