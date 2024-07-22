@@ -1,3 +1,5 @@
+import { ProjectData } from "./projects";
+
 export type Template = {
   id: number;
   title: string;
@@ -9,7 +11,8 @@ export const templates: Template[] = [
   {
     id: 0,
     title: "App Launch Landing Template",
-    description: "Tailwind CSS template for app launches with a striking hero section, app showcase area, and an 'About' section for key features.",
+    description:
+      "Tailwind CSS template for app launches with a striking hero section, app showcase area, and an 'About' section for key features.",
     generateJSXString: (data) => `
       <div className="h-screen pb-14 bg-right bg-cover" style={{ backgroundImage: "url('bg.svg')" }}>
       {/* Nav */}
@@ -103,7 +106,8 @@ export const templates: Template[] = [
   {
     id: 1,
     title: "EnvisionAI",
-    description: "A sleek, modern template with a captivating hero section and professional green themefor showcasing AI technologies.",
+    description:
+      "A sleek, modern template with a captivating hero section and professional green themefor showcasing AI technologies.",
     generateJSXString: (data) => `
       <div className="flex flex-col min-h-screen">
       {/* Header */}
@@ -152,3 +156,14 @@ export const templates: Template[] = [
     </div>`,
   },
 ];
+
+export const initialData: ProjectData = {
+  hero: {
+    title: "Hero Title",
+    description: "Hero Description",
+  },
+  about: {
+    title: "About Title",
+    description: "About Description",
+  },
+};

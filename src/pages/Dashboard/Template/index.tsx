@@ -2,11 +2,15 @@ import CodeRenderer from "@/components/Dashboard/CodeRenderer";
 import ProjectEditForm from "@/components/Dashboard/ProjectEdit";
 import ProjectRender from "@/components/Dashboard/ProjectRender";
 import { Button } from "@/components/ui/button";
+import { type ProjectData } from "@/constants/projects";
 import { templates } from "@/constants/templates";
+import { auth } from "@/lib/firebase";
+import { addProject } from "@/services/projectService";
 import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "wouter";
 
-const initialData: any = {
+const initialData: ProjectData = {
   hero: {
     title: "Hero Title",
     description: "Hero Description",
@@ -18,10 +22,13 @@ const initialData: any = {
 };
 
 export default function Template(params: { id: string }) {
+  const [user, loading] = useAuthState(auth);
+  const userId: string = user?.uid;
+
   const id: number = Number(params.id);
   const initialjsxString: string = templates[id].generateJSXString(initialData);
 
-  const [data, setData] = useState(initialData);
+  const [data, setData] = useState<ProjectData>(initialData);
   const [jsxString, setjsxString] = useState(initialjsxString);
   const [editing, setEditing] = useState(false);
 
@@ -32,12 +39,33 @@ export default function Template(params: { id: string }) {
   return (
     <div className="bg-primary p-5 h-screen overflow-hidden flex flex-col">
       <div className="flex flex-row w-full justify-between">
-        <Link href="/dashboard" className="text-xl font-bold text-primary-foreground">Dashboard</Link>
+        <Link
+          href="/dashboard"
+          className="text-xl font-bold text-primary-foreground"
+        >
+          Dashboard
+        </Link>
         <div className="flex justify-end gap-2 max-w-fit mb-2">
-          <Button variant="secondary" size="sm" onClick={() => setEditing(!editing)}>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => setEditing(!editing)}
+          >
             Edit
           </Button>
-          <Button variant="secondary" size="sm">
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={async () => {
+              await addProject({
+                userId,
+                title: "Title",
+                description: "desc",
+                templateId: String(id),
+                data,
+              });
+            }}
+          >
             Save
           </Button>
           <CodeRenderer jsxString={jsxString} />

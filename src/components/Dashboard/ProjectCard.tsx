@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { deleteProject } from "@/services/projectService";
 
 export default function ProjectCard({
   id,
@@ -29,7 +30,14 @@ export default function ProjectCard({
         <Button asChild>
           <Link to={`/dashboard/projects/${id}`}>View</Link>
         </Button>
-        <Button variant="destructive">Delete</Button>
+        <Button
+          variant="destructive"
+          onClick={async () => {
+            await deleteProject(id);
+          }}
+        >
+          Delete
+        </Button>
       </CardFooter>
     </Card>
   );
