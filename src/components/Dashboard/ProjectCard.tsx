@@ -34,6 +34,7 @@ export default function ProjectCard({
           variant="destructive"
           onClick={async () => {
             await deleteProject(id);
+            window.location.reload();
           }}
         >
           Delete

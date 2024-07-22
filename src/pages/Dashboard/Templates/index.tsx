@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TemplateCard from "@/components/Dashboard/TemplateCard";
 import { Button } from "@/components/ui/button";
 import { templates, type Template } from "@/constants/templates";

@@ -71,7 +71,6 @@ export default function Template(params: { id: string }) {
           <CodeRenderer jsxString={jsxString} />
           {editing && (
             <ProjectEditForm
-              data={initialData}
               set={setData}
               setEditing={setEditing}
             />
