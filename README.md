@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Page Crafter AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Page Crafter AI**—the ultimate landing page creator powered by cutting-edge technology and handcrafted templates. Whether you're a developer, marketer, or entrepreneur, Page Crafter AI simplifies building stunning, high-converting landing pages with ease.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Page Crafter AI** combines the power of artificial intelligence with a user-friendly interface to help you craft beautiful and functional landing pages. Our solution offers a suite of expertly designed templates, making it easy for you to customize and launch your landing pages quickly.
 
-## Expanding the ESLint configuration
+With our tool, you can:
+- Effortlessly choose from a variety of handcrafted templates.
+- Utilize AI-driven recommendations to enhance your page.
+- Deploy your landing page with ease, thanks to our seamless integration with Firebase.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+Our platform is built using a robust and modern tech stack:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **React**: For building dynamic and responsive user interfaces.
+- **Tailwind CSS**: To create beautiful and customizable designs effortlessly.
+- **Shadcn**: For enhancing UI components with additional functionality and styles.
+- **React Hook Form**: To manage forms efficiently and handle user input seamlessly.
+- **Firebase**: For reliable backend services, including authentication and data storage.
+- **AI (Groq)**: Leveraging AI to provide smart recommendations and improve user experience.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Star the Repo
+
+If you find Page Crafter AI useful and want to support our project, please give us a star on GitHub! 🌟
+
+[Star the Repo](https://github.com/kom-senapati/page-crafter)
